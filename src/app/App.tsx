@@ -14,7 +14,7 @@ import { Footer } from "./components/Footer";
 export default function App() {
   return (
     <div
-      className="min-h-screen"
+      className="min-h-screen overflow-x-hidden w-full relative"
       style={{ fontFamily: "'Lato', sans-serif" }}
     >
       <Navbar />
@@ -23,7 +23,7 @@ export default function App() {
         <AboutSection />
         <SpecialtiesSection />
         <GallerySection />
-        <CoursesSection />
+        {/* <CoursesSection /> */}
         <ContactSection />
       </main>
       <Footer />
@@ -31,7 +31,11 @@ export default function App() {
       <style>{`
         * { scrollbar-width: none; }
         *::-webkit-scrollbar { display: none; }
-        html { scroll-behavior: smooth; }
+        html, body {
+          scroll-behavior: smooth;
+          overflow-x: hidden;
+          max-width: 100%;
+        }
       `}</style>
     </div>
   );

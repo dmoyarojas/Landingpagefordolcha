@@ -91,7 +91,7 @@ export function ContactSection() {
         {/* Contact info pills */}
         <div className="flex flex-wrap justify-center gap-4 pt-2">
           {[
-            { icon: "📍", text: "Medellín, Colombia" },
+            { icon: "📍", text: "Buenos Aires, Argentina" },
             { icon: "🕐", text: "Lun – Sáb, 9am – 6pm" },
             { icon: "📸", text: "@dolcha.pasteleria" },
           ].map((info) => (

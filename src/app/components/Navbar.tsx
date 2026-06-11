@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
+import logoImg from "../../public/descarga.png";
+
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -48,27 +50,29 @@ export function Navbar() {
       ref={navRef}
       role="navigation"
       aria-label="Navegación principal"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
           ? "bg-[#F6E5E7]/95 backdrop-blur-md shadow-sm border-b border-[#EFC0BC]/40"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
         {/* Logo */}
-        <div ref={logoRef} className="flex flex-col leading-none cursor-pointer" onClick={() => scrollTo("#inicio")}>
-          <span
-            className="text-[#828C6A] tracking-widest uppercase"
-            style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.65rem", letterSpacing: "0.25em" }}
-          >
-            Pastelería Boutique
-          </span>
-          <span
-            className="text-[#3a2e2e]"
-            style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.45rem", fontWeight: 600, lineHeight: 1.1 }}
-          >
-            Dolcha
-          </span>
+        <div ref={logoRef} className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo("#inicio")}>
+          <img src={logoImg} alt="Dolcha logo" className="h-12 w-auto object-contain rounded-full" />
+          <div className="flex flex-col leading-none">
+            <span
+              className="text-[#828C6A] tracking-widest uppercase"
+              style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.65rem", letterSpacing: "0.25em" }}
+            >
+              Pastelería Boutique
+            </span>
+            <span
+              className="text-[#3a2e2e]"
+              style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.45rem", fontWeight: 600, lineHeight: 1.1 }}
+            >
+              Dolcha
+            </span>
+          </div>
         </div>
 
         {/* Desktop links */}
@@ -123,9 +127,8 @@ export function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-500 bg-[#F6E5E7]/98 backdrop-blur-md border-t border-[#EFC0BC]/40 ${
-          menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-500 bg-[#F6E5E7]/98 backdrop-blur-md border-t border-[#EFC0BC]/40 ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="px-6 py-6 flex flex-col gap-5">
           {navLinks.map((link) => (
