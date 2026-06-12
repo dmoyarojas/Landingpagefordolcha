@@ -349,13 +349,13 @@ export function ProductCatalogSection() {
         </div>
 
         {/* Categories Selector */}
-        <div ref={tabsRef} className="flex justify-center mb-16 overflow-x-auto pb-4 scrollbar-none">
-          <div className="flex gap-3 bg-[#fdf0f1]/60 p-1.5 rounded-full border border-[#EFC0BC]/30 backdrop-blur-sm min-w-max">
+        <div ref={tabsRef} className="flex justify-center mb-16 w-full px-4 md:px-0">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 bg-[#fdf0f1]/60 p-2 md:p-1.5 rounded-2xl md:rounded-full border border-[#EFC0BC]/30 backdrop-blur-sm max-w-full md:min-w-max">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-500 cursor-pointer ${activeCategory === cat.id
+                className={`px-4 py-2 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-500 cursor-pointer ${activeCategory === cat.id
                   ? "bg-[#828C6A] text-white shadow-md shadow-[#828C6A]/15 scale-105"
                   : "text-[#7a5e5e] hover:text-[#3a2e2e] hover:bg-[#F6E5E7]/50"
                   }`}
@@ -450,8 +450,8 @@ export function ProductCatalogSection() {
             </CarouselContent>
 
             {/* Navigation Arrows positioned cleanly outside/inside margins */}
-            <CarouselPrevious className="hidden sm:inline-flex bg-white hover:bg-[#F6E5E7] border border-[#EFC0BC]/50 text-[#828C6A] hover:text-[#3a2e2e]" />
-            <CarouselNext className="hidden sm:inline-flex bg-white hover:bg-[#F6E5E7] border border-[#EFC0BC]/50 text-[#828C6A] hover:text-[#3a2e2e]" />
+            <CarouselPrevious className="flex bg-white hover:bg-[#F6E5E7] border border-[#EFC0BC]/50 text-[#828C6A] hover:text-[#3a2e2e] -left-3 md:-left-12 z-10 shadow-md hover:shadow-lg" />
+            <CarouselNext className="flex bg-white hover:bg-[#F6E5E7] border border-[#EFC0BC]/50 text-[#828C6A] hover:text-[#3a2e2e] -right-3 md:-right-12 z-10 shadow-md hover:shadow-lg" />
           </Carousel>
         </div>
       </div>
