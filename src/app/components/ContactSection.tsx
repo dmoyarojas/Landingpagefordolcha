@@ -91,24 +91,53 @@ export function ContactSection() {
         {/* Contact info pills */}
         <div className="flex flex-wrap justify-center gap-4 pt-2">
           {[
-            { icon: "📍", text: "Buenos Aires, Argentina" },
-            { icon: "🕐", text: "Lun – Sáb, 9am – 6pm" },
-            { icon: "📸", text: "@dolcha.pasteleria" },
-          ].map((info) => (
-            <div
-              key={info.text}
-              className="px-4 py-2 rounded-full flex items-center gap-2"
-              style={{ background: "rgba(246,229,231,0.2)", backdropFilter: "blur(6px)" }}
-            >
-              <span>{info.icon}</span>
-              <span
-                className="text-[#F6E5E7]/90"
-                style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.8rem" }}
+            {
+              icon: "📍",
+              text: "Montevideo 732 Recoleta, Buenos Aires",
+              href: "https://maps.app.goo.gl/Fav5errfy6WuieYr9",
+              title: "Abrir en Maps"
+            },
+            { icon: "🕐", text: "Lun – Vie, 10am – 7:30pm, Sáb y Dom 10:30am - 7:00pm" },
+            { icon: "📸", text: "@dolchapasteleriaboutique" },
+          ].map((info) => {
+            const pillContent = (
+              <>
+                <span>{info.icon}</span>
+                <span
+                  className="text-[#F6E5E7]/90"
+                  style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.8rem" }}
+                >
+                  {info.text}
+                </span>
+              </>
+            );
+
+            if (info.href) {
+              return (
+                <a
+                  key={info.text}
+                  href={info.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={info.title}
+                  className="px-4 py-2 rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-[#828C6A] hover:scale-105"
+                  style={{ background: "rgba(246,229,231,0.2)", backdropFilter: "blur(6px)", cursor: "pointer" }}
+                >
+                  {pillContent}
+                </a>
+              );
+            }
+
+            return (
+              <div
+                key={info.text}
+                className="px-4 py-2 rounded-full flex items-center gap-2"
+                style={{ background: "rgba(246,229,231,0.2)", backdropFilter: "blur(6px)" }}
               >
-                {info.text}
-              </span>
-            </div>
-          ))}
+                {pillContent}
+              </div>
+            );
+          })}
         </div>
       </div>
 

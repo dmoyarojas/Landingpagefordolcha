@@ -1,14 +1,15 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import pastelescelebracion from "../../public/dolchaPastelesCelebracion.jpeg"
+import tartasartesanalanes from "../../public/dolchaTartasArtesanales.jpeg"
 gsap.registerPlugin(ScrollTrigger);
 
 const specialties = [
   {
     title: "Pasteles de Celebración",
     description: "Diseñamos el pastel de tus sueños: desde el boceto hasta el detalle más delicado, cada nivel es una declaración de amor.",
-    img: "https://images.unsplash.com/photo-1581745071812-e69f8cf9e898?w=500&h=600&fit=crop&auto=format",
+    img: pastelescelebracion,
     alt: "Pastel de celebración de múltiples pisos decorado con flores",
     tag: "Bodas & Eventos",
   },
@@ -22,7 +23,7 @@ const specialties = [
   {
     title: "Tartas Artesanales",
     description: "Masas crujientes, cremas suaves y frutas frescas de temporada se unen en cada pieza para sorprenderte.",
-    img: "https://images.unsplash.com/photo-1581745069539-1e60d7f965f4?w=500&h=600&fit=crop&auto=format",
+    img: tartasartesanalanes,
     alt: "Tarta artesanal decorada con flores rosas y crema",
     tag: "Repostería Clásica",
   },
@@ -96,7 +97,7 @@ export function SpecialtiesSection() {
               tabIndex={0}
               aria-label={item.title}
             >
-              <div className="relative overflow-hidden" style={{ height: 300 }}>
+              <div className="relative overflow-hidden aspect-[3/4] w-full">
                 <img
                   src={item.img}
                   alt={item.alt}

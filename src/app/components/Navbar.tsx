@@ -34,7 +34,9 @@ export function Navbar() {
   const navLinks = [
     { label: "Inicio", href: "#inicio" },
     { label: "Especialidades", href: "#especialidades" },
+    { label: "Catálogo", href: "#catalogo" },
     { label: "Galería", href: "#galeria" },
+    { label: "Mundial 2026", href: "#mundial2026" },
     { label: "Nosotras", href: "#nosotras" },
     { label: "Contacto", href: "#contacto" },
   ];
@@ -76,7 +78,7 @@ export function Navbar() {
         </div>
 
         {/* Desktop links */}
-        <div ref={linksRef} className="hidden md:flex items-center gap-8">
+        <div ref={linksRef} className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-8">
           {navLinks.map((link) => (
             <button
               key={link.label}

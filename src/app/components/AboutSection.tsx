@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import imagen1 from "../../public/dolchaNuestraHistoria.jpeg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,11 +50,11 @@ export function AboutSection() {
         {/* Image collage */}
         <div ref={imgRef} className="relative">
           <div
-            className="rounded-3xl overflow-hidden"
-            style={{ height: 480, boxShadow: "0 20px 60px rgba(130,140,106,0.2)" }}
+            className="rounded-3xl overflow-hidden aspect-[3/4] w-full max-w-md mx-auto"
+            style={{ boxShadow: "0 20px 60px rgba(130,140,106,0.2)" }}
           >
             <img
-              src="https://images.unsplash.com/photo-1581745073351-e053d7d73694?w=700&h=960&fit=crop&auto=format"
+              src={imagen1}
               alt="Detalle de pastel artesanal con rosas rosadas de Dolcha Pastelería"
               className="w-full h-full object-cover"
             />

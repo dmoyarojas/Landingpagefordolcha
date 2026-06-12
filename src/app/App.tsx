@@ -3,7 +3,9 @@ import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { AboutSection } from "./components/AboutSection";
 import { SpecialtiesSection } from "./components/SpecialtiesSection";
+import { ProductCatalogSection } from "./components/ProductCatalogSection";
 import { GallerySection } from "./components/GallerySection";
+import { ThemedSection } from "./components/ThemedSection";
 import { CoursesSection } from "./components/CoursesSection";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
@@ -22,7 +24,9 @@ export default function App() {
         <Hero />
         <AboutSection />
         <SpecialtiesSection />
+        <ProductCatalogSection />
         <GallerySection />
+        <ThemedSection />
         {/* <CoursesSection /> */}
         <ContactSection />
       </main>

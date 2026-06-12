@@ -1,17 +1,19 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import galeria1 from "@/public/dolchaGaleria1.png"
+import galeria2 from "@/public/dolchaGaleria2.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1761110657716-1eb3cb62de97?w=600&h=700&fit=crop&auto=format",
+    src: galeria1,
     alt: "Tres pasteles de boda escalonados con rosas y follaje verde",
     span: "row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1519665541-b13188b28be9?w=500&h=320&fit=crop&auto=format",
+    src: galeria2,
     alt: "Torre de macarons apilados de colores pasteles",
     span: "",
   },
