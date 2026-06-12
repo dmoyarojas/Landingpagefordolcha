@@ -76,7 +76,7 @@ export function AboutSection() {
             >
               años de amor
               <br />
-              en cada dulce
+              en cada torta
             </span>
           </div>
         </div>
@@ -107,7 +107,7 @@ export function AboutSection() {
             className="text-[#7a5e5e]"
             style={{ fontFamily: "'Lato', sans-serif", fontSize: "1rem", lineHeight: 1.85, fontWeight: 300 }}
           >
-            Dolcha nació del sueño de crear dulces que trasciendan el sabor: momentos que permanecen en la memoria.
+            Dolcha nació del sueño de crear tortas que trasciendan el sabor: momentos que permanecen en la memoria.
             Desde 2016 elaboramos cada pastel con ingredientes de primera calidad, técnicas artesanales y una estética
             romántica que convierte cada creación en una pequeña obra de arte.
           </p>
@@ -122,7 +122,7 @@ export function AboutSection() {
 
           <div className="grid grid-cols-3 gap-6 pt-4">
             {[
-              { num: "300+", label: "Pasteles\ncreados" },
+              { num: "300+", label: "Tortas\ncreados" },
               { num: "98%", label: "Clientes\nsatisfechos" },
               { num: "12", label: "Sabores\ndisponibles" },
             ].map((stat) => (

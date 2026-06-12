@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
-import logoImg from "../../public/descarga.png";
+import logoImg from "../../public/dolchaHeroSection.png";
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,6 +35,7 @@ export function Navbar() {
     { label: "Inicio", href: "#inicio" },
     { label: "Especialidades", href: "#especialidades" },
     { label: "Catálogo", href: "#catalogo" },
+    { label: "Sabores", href: "#sabores" },
     { label: "Galería", href: "#galeria" },
     { label: "Mundial 2026", href: "#mundial2026" },
     { label: "Nosotras", href: "#nosotras" },
@@ -53,8 +54,8 @@ export function Navbar() {
       role="navigation"
       aria-label="Navegación principal"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? "bg-[#F6E5E7]/95 backdrop-blur-md shadow-sm border-b border-[#EFC0BC]/40"
-          : "bg-transparent"
+        ? "bg-[#F6E5E7]/95 backdrop-blur-md shadow-sm border-b border-[#EFC0BC]/40"
+        : "bg-transparent"
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">

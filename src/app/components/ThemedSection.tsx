@@ -78,11 +78,11 @@ export function ThemedSection() {
       style={{ background: "#fdf0f1" }}
     >
       {/* Background decorations for soccer/festive feel but elegant */}
-      <div 
+      <div
         className="absolute top-1/4 -left-16 w-64 h-64 rounded-full opacity-10 blur-3xl pointer-events-none"
         style={{ background: "#828C6A" }}
       />
-      <div 
+      <div
         className="absolute bottom-1/4 -right-16 w-80 h-80 rounded-full opacity-10 blur-3xl pointer-events-none"
         style={{ background: "#EFC0BC" }}
       />

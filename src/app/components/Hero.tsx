@@ -1,8 +1,21 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import heroImg from "../../public/dolchaHeroSection.jpeg";
+import fondo from "../../public/dolchaFondo.jpeg"
+import fondo1 from "../../public/dolchaFondo1.jpeg"
+import fondo2 from "../../public/dolchaFondo2.jpeg"
 
 export function Hero() {
+  const [currentBgIndex, setCurrentBgIndex] = useState(0);
+  const backgrounds = [fondo, fondo1, fondo2];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBgIndex((prevIndex) => (prevIndex + 1) % backgrounds.length);
+    }, 5000); // Cambia cada 5 segundos
+    return () => clearInterval(timer);
+  }, [backgrounds.length]);
+
   const sectionRef = useRef<HTMLElement>(null);
   const taglineRef = useRef<HTMLParagraphElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -62,17 +75,22 @@ export function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{ background: "linear-gradient(135deg, #F6E5E7 0%, #EFC0BC 50%, #E69B97 100%)" }}
     >
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1761110657716-1eb3cb62de97?w=1600&h=900&fit=crop&auto=format')",
-          filter: "brightness(0.35)",
-        }}
-        role="img"
-        aria-label="Pastel de bodas con rosas y follaje, obra de Dolcha Pastelería Boutique"
-      />
+      {/* Background images rotating */}
+      <div className="absolute inset-0 overflow-hidden">
+        {backgrounds.map((bg, idx) => (
+          <div
+            key={idx}
+            className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
+            style={{
+              backgroundImage: `url(${bg})`,
+              opacity: currentBgIndex === idx ? 1 : 0,
+              filter: "brightness(0.35)",
+            }}
+            role="img"
+            aria-label={`Imagen de fondo ${idx + 1}`}
+          />
+        ))}
+      </div>
 
       {/* Gradient overlay */}
       <div
@@ -127,7 +145,7 @@ export function Hero() {
               textShadow: "0 2px 20px rgba(0,0,0,0.3)",
             }}
           >
-            Donde cada dulce
+            Donde cada torta
             <br />
             <em style={{ color: "#EFC0BC", fontStyle: "italic" }}>cuenta una historia.</em>
           </h1>
@@ -137,9 +155,10 @@ export function Hero() {
             className="text-[#F6E5E7]/90 max-w-md"
             style={{ fontFamily: "'Lato', sans-serif", fontSize: "1.05rem", lineHeight: 1.75, fontWeight: 300 }}
           >
-            En <strong style={{ fontWeight: 400, color: "#EFC0BC" }}>Dolcha Pastelería Boutique</strong> elaboramos
-            pasteles, tartas y dulces artesanales con ingredientes seleccionados, convirtiendo cada celebración en un
-            recuerdo irrepetible.
+            En <strong style={{ fontWeight: 400, color: "#EFC0BC" }}>En Dolcha Pastelería Boutique</strong> elaboramos tortas
+            personalizadas contanos  tu idea y lo hacemos realidad,nos especializamos en tortas,
+            tartas y mesas dulces para eventos. con ingredientes seleccionados y diseñada para hacer de tu
+            celebración un recuerdo inolvidable.
           </p>
 
           <div ref={ctaRef} className="flex flex-wrap gap-4 pt-2">

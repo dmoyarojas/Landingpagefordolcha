@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const galleryImages = [
   {
     src: galeria1,
-    alt: "Tres pasteles de boda escalonados con rosas y follaje verde",
+    alt: "Tres tortas de boda escalonados con rosas y follaje verde",
     span: "row-span-2",
   },
   {

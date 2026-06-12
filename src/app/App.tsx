@@ -7,6 +7,7 @@ import { Hero } from "./components/Hero";
 import { AboutSection } from "./components/AboutSection";
 import { SpecialtiesSection } from "./components/SpecialtiesSection";
 import { ProductCatalogSection } from "./components/ProductCatalogSection";
+import { FlavorsSection } from "./components/FlavorsSection";
 import { GallerySection } from "./components/GallerySection";
 import { ThemedSection } from "./components/ThemedSection";
 import { CoursesSection } from "./components/CoursesSection";
@@ -63,6 +64,7 @@ export default function App() {
         <AboutSection />
         <SpecialtiesSection />
         <ProductCatalogSection />
+        <FlavorsSection />
         <GallerySection />
         <ThemedSection />
         {/* <CoursesSection /> */}

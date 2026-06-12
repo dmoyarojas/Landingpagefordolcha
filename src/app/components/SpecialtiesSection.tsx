@@ -3,11 +3,12 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import pastelescelebracion from "../../public/dolchaPastelesCelebracion.jpeg"
 import tartasartesanalanes from "../../public/dolchaTartasArtesanales.jpeg"
+import eventos4 from "../../public/dolchaTEventos4.jpeg"
 gsap.registerPlugin(ScrollTrigger);
 
 const specialties = [
   {
-    title: "Pasteles de Celebración",
+    title: "Tortas de Celebración",
     description: "Diseñamos el pastel de tus sueños: desde el boceto hasta el detalle más delicado, cada nivel es una declaración de amor.",
     img: pastelescelebracion,
     alt: "Pastel de celebración de múltiples pisos decorado con flores",
@@ -23,7 +24,7 @@ const specialties = [
   {
     title: "Tartas Artesanales",
     description: "Masas crujientes, cremas suaves y frutas frescas de temporada se unen en cada pieza para sorprenderte.",
-    img: tartasartesanalanes,
+    img: eventos4,
     alt: "Tarta artesanal decorada con flores rosas y crema",
     tag: "Repostería Clásica",
   },

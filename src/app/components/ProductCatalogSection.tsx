@@ -25,7 +25,13 @@ import disenio3 from "../../public/dolchaTDiseño3.jpeg"
 import disenio4 from "../../public/dolchaTDiseño4.jpeg"
 import disenio5 from "../../public/dolchaTDiseño5.jpeg"
 import disenio6 from "../../public/dolchaTDiseño6.jpeg"
-
+import artesanal from "../../public/dolchaTArtesanales.jpeg"
+import artesanal2 from "../../public/dolchaTArtesanales2.jpeg"
+import artesanal3 from "../../public/dolchaTArtesanales3.jpeg"
+import artesanal4 from "../../public/dolchaTArtesanales3.png"
+import macarrones from "../../public/dolchaMacarrones.jpeg"
+import macarrones2 from "../../public/dolchaMacarrones1.jpeg"
+import macarrones3 from "../../public/dolchaMacarronesSabores.jpeg"
 
 
 
@@ -47,7 +53,7 @@ const categories = [
   { id: "infantiles", name: "Infantiles" },
   { id: "diseno", name: "De Diseño" },
   { id: "macarons", name: "Macarons" },
-  { id: "pasteleria", name: "Pastelería General" }
+  // { id: "pasteleria", name: "Pastelería General" }
 ];
 
 const catalogData: Record<string, Product[]> = {
@@ -224,32 +230,32 @@ const catalogData: Record<string, Product[]> = {
   macarons: [
     {
       id: "mac-1",
-      title: "Macarons Clásicos Franceses",
-      description: "Caja surtida de 12 o 24 unidades. Sabores clásicos: chocolate belga, frambuesa, limón y vainilla de Madagascar.",
-      img: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&h=800&fit=crop&auto=format",
-      alt: "Caja de macarons franceses de colores pasteles",
-      price: "$45.000 (Caja x12)",
+      title: "Macarons Clásicos",
+      description: "Caja surtida de 12 o 24 unidades.",
+      img: macarrones,
+      alt: "Caja de macarons  de colores pasteles",
+      price: "",
       tag: "Artesanal",
-      msg: "Hola Dolcha! Quisiera pedir una Caja de Macarons Clásicos Franceses 🎁🍬"
+      msg: "Hola Dolcha! Quisiera pedir una Caja de Macarons Clásicos 🎁🍬"
     },
     {
       id: "mac-2",
-      title: "Torre de Macarons Rosé",
-      description: "Torre de 36 macarons con degradé de rosas y flores frescas, ideal para mesa de postres o regalos de lujo.",
-      img: "https://images.unsplash.com/photo-1519665541-b13188b28be9?w=600&h=800&fit=crop&auto=format",
-      alt: "Torre elegante de macarons rosados",
-      price: "Desde $130.000",
-      tag: "Para Eventos",
-      msg: "Hola Dolcha! Quisiera información de la Torre de Macarons Rosé 🌹🍬"
+      title: "Macarons Blancos",
+      description: "",
+      img: macarrones2,
+      alt: "",
+      price: "",
+      tag: "",
+      msg: "Hola Dolcha! Quisiera pedir una Caja de Macarons Clásicos 🎁🍬"
     },
     {
       id: "mac-3",
       title: "Pack Sabores del Huerto",
       description: "Macarons gourmet con combinaciones únicas de frutas y hierbas, como maracuyá-albahaca y mora-lavanda.",
-      img: "https://images.unsplash.com/photo-1557925923-cd4648e21187?w=600&h=800&fit=crop&auto=format",
+      img: macarrones3,
       alt: "Macarons surtidos en sabores gourmet",
-      price: "$48.000 (Caja x12)",
-      msg: "Hola Dolcha! Me gustaría ordenar el Pack Sabores del Huerto de macarons 🍊🌿"
+      price: "",
+      msg: "Hola Dolcha! Quisiera pedir una Caja de Macarons Clásicos 🎁🍬"
     }
   ],
   pasteleria: [
@@ -257,9 +263,9 @@ const catalogData: Record<string, Product[]> = {
       id: "pas-1",
       title: "Tarta de Frutas Silvestres",
       description: "Masa sablee crujiente rellena de crema pastelera de vainilla y abundante selección de fresas, arándanos y frambuesas.",
-      img: "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=600&h=800&fit=crop&auto=format",
+      img: artesanal,
       alt: "Tarta de frutas rojas y frambuesas",
-      price: "$65.000 (Grande)",
+      price: "",
       tag: "Frescura Diaria",
       msg: "Hola Dolcha! Quisiera pedir una Tarta de Frutas Silvestres para el fin de semana 🍓🥧"
     },
@@ -267,7 +273,7 @@ const catalogData: Record<string, Product[]> = {
       id: "pas-2",
       title: "Petit Fours de Limón y Merengue",
       description: "Bocaditos individuales de tarta de limón con merengue italiano dorado. Presentación en caja por 12 unidades.",
-      img: "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&h=800&fit=crop&auto=format",
+      img: artesanal2,
       alt: "Minipasteles y postres de limón gourmet",
       price: "$38.000 (Caja x12)",
       msg: "Hola Dolcha! Quisiera comprar una caja de Petit Fours de Limón y Merengue 🍋✨"
@@ -276,7 +282,17 @@ const catalogData: Record<string, Product[]> = {
       id: "pas-3",
       title: "Croissants Rellenos de Almendra",
       description: "Hojaldre artesanal de mantequilla de alta calidad, relleno de crema de almendras y decorado con almendras fileteadas.",
-      img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=800&fit=crop&auto=format",
+      img: artesanal3,
+      alt: "Croissants dorados crujientes con almendras",
+      price: "$8.500 c/u",
+      tag: "Horneado Hoy",
+      msg: "Hola Dolcha! Me gustaría consultar disponibilidad de Croissants Rellenos de Almendra 🥐😋"
+    },
+    {
+      id: "pas-4",
+      title: "Croissants Rellenos de Almendra",
+      description: "Hojaldre artesanal de mantequilla de alta calidad, relleno de crema de almendras y decorado con almendras fileteadas.",
+      img: artesanal4,
       alt: "Croissants dorados crujientes con almendras",
       price: "$8.500 c/u",
       tag: "Horneado Hoy",
