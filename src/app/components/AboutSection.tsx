@@ -55,7 +55,7 @@ export function AboutSection() {
           >
             <img
               src={imagen1}
-              alt="Detalle de pastel artesanal con rosas rosadas de Dolcha Pastelería"
+              alt="Detalle de torta artesanal con rosas rosadas de Dolcha Pastelería"
               className="w-full h-full object-cover"
             />
           </div>
@@ -108,7 +108,7 @@ export function AboutSection() {
             style={{ fontFamily: "'Lato', sans-serif", fontSize: "1rem", lineHeight: 1.85, fontWeight: 300 }}
           >
             Dolcha nació del sueño de crear tortas que trasciendan el sabor: momentos que permanecen en la memoria.
-            Desde 2016 elaboramos cada pastel con ingredientes de primera calidad, técnicas artesanales y una estética
+            Desde 2016 elaboramos cada torta con ingredientes de primera calidad, técnicas artesanales y una estética
             romántica que convierte cada creación en una pequeña obra de arte.
           </p>
 
@@ -122,7 +122,7 @@ export function AboutSection() {
 
           <div className="grid grid-cols-3 gap-6 pt-4">
             {[
-              { num: "300+", label: "Tortas\ncreados" },
+              { num: "300+", label: "Tortas\ncreadas" },
               { num: "98%", label: "Clientes\nsatisfechos" },
               { num: "12", label: "Sabores\ndisponibles" },
             ].map((stat) => (

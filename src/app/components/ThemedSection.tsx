@@ -72,7 +72,7 @@ export function ThemedSection() {
 
   return (
     <section
-      id="mundial2026"
+      id="fechasEspeciales"
       ref={sectionRef}
       className="py-28 px-6 lg:px-12 relative overflow-hidden"
       style={{ background: "#fdf0f1" }}

@@ -49,12 +49,12 @@ export function Hero() {
   };
 
   const scrollToCollection = () => {
-    document.querySelector("#mundial2026")?.scrollIntoView({ behavior: "smooth" });
+    document.querySelector("#fechasEspeciales")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const openWhatsapp = () => {
     window.open(
-      "https://wa.me/573000000000?text=Hola%20Dolcha%2C%20quisiera%20hacer%20un%20pedido%20%F0%9F%8E%82",
+      "https://wa.me/541131034341?text=Hola%20Dolcha%2C%20quisiera%20hacer%20un%20pedido%20%F0%9F%8E%82",
       "_blank",
       "noopener,noreferrer"
     );
@@ -216,7 +216,7 @@ export function Hero() {
           >
             <img
               src={heroImg}
-              alt="Pastel artesanal decorado con flores rosas de Dolcha"
+              alt="Torta artesanal decorada con flores rosas de Dolcha"
               className="w-full h-full object-cover"
             />
             <div

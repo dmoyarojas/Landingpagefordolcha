@@ -9,9 +9,9 @@ gsap.registerPlugin(ScrollTrigger);
 const specialties = [
   {
     title: "Tortas de Celebración",
-    description: "Diseñamos el pastel de tus sueños: desde el boceto hasta el detalle más delicado, cada nivel es una declaración de amor.",
+    description: "Diseñamos la torta de tus sueños: desde el boceto hasta el detalle más delicado, cada nivel es una declaración de amor.",
     img: pastelescelebracion,
-    alt: "Pastel de celebración de múltiples pisos decorado con flores",
+    alt: "Torta de celebración de múltiples pisos decorado con flores",
     tag: "Bodas & Eventos",
   },
   {

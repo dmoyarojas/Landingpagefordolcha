@@ -1,6 +1,10 @@
 export function Footer() {
   const scrollTo = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("http")) {
+      window.open(href, "_blank", "noopener,noreferrer");
+    } else {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -50,7 +54,7 @@ export function Footer() {
               { label: "Inicio", href: "#inicio" },
               { label: "Especialidades", href: "#especialidades" },
               { label: "Galería", href: "#galeria" },
-              { label: "Cursos", href: "#cursos" },
+              { label: "Cursos", href: "https://x.com/home?lang=es" },
               { label: "Contacto", href: "#contacto" },
             ].map((link) => (
               <li key={link.label}>

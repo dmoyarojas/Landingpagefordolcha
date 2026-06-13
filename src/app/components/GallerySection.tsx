@@ -24,7 +24,7 @@ const galleryImages = [
   },
   {
     src: "https://images.unsplash.com/photo-1581745073351-e053d7d73694?w=600&h=400&fit=crop&auto=format",
-    alt: "Pastel blanco con decoración de rosas rosadas",
+    alt: "Torta blanca con decoración de rosas rosadas",
     span: "col-span-2",
   },
 ];

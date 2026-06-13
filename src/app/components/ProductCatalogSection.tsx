@@ -274,7 +274,7 @@ const catalogData: Record<string, Product[]> = {
       title: "Petit Fours de Limón y Merengue",
       description: "Bocaditos individuales de tarta de limón con merengue italiano dorado. Presentación en caja por 12 unidades.",
       img: artesanal2,
-      alt: "Minipasteles y postres de limón gourmet",
+      alt: "Minitortas y postres de limón gourmet",
       price: "$38.000 (Caja x12)",
       msg: "Hola Dolcha! Quisiera comprar una caja de Petit Fours de Limón y Merengue 🍋✨"
     },
@@ -331,7 +331,7 @@ export function ProductCatalogSection() {
   }, []);
 
   const openWhatsapp = (message: string) => {
-    window.open(`https://wa.me/573000000000?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/541131034341?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -345,10 +345,10 @@ export function ProductCatalogSection() {
         {/* Header */}
         <div ref={headRef} className="text-center mb-12 flex flex-col items-center gap-4">
           <p
-            className="tracking-widest uppercase text-[#A0AB89]"
-            style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.65rem", letterSpacing: "0.3em" }}
+            className="tracking-widest uppercase text-[#A0AB89] font-bold"
+            style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.9rem", letterSpacing: "0.3em" }}
           >
-            ✦ Nuestro Catálogo ✦
+            ✦ Nuestras Especialidades ✦
           </p>
           <h2
             className="text-[#3a2e2e]"
@@ -360,7 +360,7 @@ export function ProductCatalogSection() {
             className="text-[#7a5e5e] max-w-xl"
             style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.95rem", lineHeight: 1.75, fontWeight: 300 }}
           >
-            Selecciona una categoría y navega horizontalmente para explorar los diseños y pasteles de tus sueños.
+            Selecciona una categoría y navega horizontalmente para explorar los diseños y tortas de tus sueños.
           </p>
         </div>
 

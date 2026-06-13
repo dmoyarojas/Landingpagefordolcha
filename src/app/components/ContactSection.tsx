@@ -21,7 +21,7 @@ export function ContactSection() {
 
   const openWhatsapp = () => {
     window.open(
-      "https://wa.me/573000000000?text=Hola%20Dolcha%20%F0%9F%8E%82%20Quisiera%20consultar%20sobre%20un%20pedido.",
+      "https://wa.me/541131034341?text=Hola%20Dolcha%20%F0%9F%8E%82%20Quisiera%20consultar%20sobre%20un%20pedido.",
       "_blank",
       "noopener,noreferrer"
     );

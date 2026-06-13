@@ -13,11 +13,11 @@ const courses = [
     description: "Aprende la técnica francesa clásica para crear macarons perfectos. Incluye rellenos de temporada.",
   },
   {
-    name: "Pasteles de Fondant",
+    name: "Tortas de Fondant",
     level: "Intermedio",
     duration: "8 horas",
     price: "$220.000",
-    description: "Diseña y construye pasteles de varios pisos cubiertos con fondant y decoraciones florales.",
+    description: "Diseña y construye tortas de varios pisos cubiertas con fondant y decoraciones florales.",
   },
   {
     name: "Tartas Modernas",
@@ -52,7 +52,7 @@ export function CoursesSection() {
 
   const openWhatsapp = (courseName: string) => {
     const msg = encodeURIComponent(`Hola Dolcha 🎂 Me interesa el curso de ${courseName}. ¿Tienen disponibilidad?`);
-    window.open(`https://wa.me/573000000000?text=${msg}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/541131034341?text=${msg}`, "_blank", "noopener,noreferrer");
   };
 
   return (

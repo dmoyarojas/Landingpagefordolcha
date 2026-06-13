@@ -25,10 +25,49 @@ export function Navbar() {
     }
   }, []);
 
+  const [activeSection, setActiveSection] = useState("inicio");
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = [
+      "inicio",
+      "especialidades",
+      "catalogo",
+      "sabores",
+      "galeria",
+      "fechasEspeciales",
+      "nosotras",
+      "contacto",
+      "cursos",
+    ];
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-25% 0px -55% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const navLinks = [
@@ -37,15 +76,19 @@ export function Navbar() {
     { label: "Catálogo", href: "#catalogo" },
     { label: "Sabores", href: "#sabores" },
     { label: "Galería", href: "#galeria" },
-    { label: "Mundial 2026", href: "#mundial2026" },
+    { label: "Fechas Especiales", href: "#fechasEspeciales" },
     { label: "Nosotras", href: "#nosotras" },
-    { label: "Contacto", href: "#contacto" },
+    { label: "Contacto", href: "https://www.escueladolce.com.ar/" },
   ];
 
   const scrollTo = (href: string) => {
     setMenuOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("http")) {
+      window.open(href, "_blank", "noopener,noreferrer");
+    } else {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -53,10 +96,7 @@ export function Navbar() {
       ref={navRef}
       role="navigation"
       aria-label="Navegación principal"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-        ? "bg-[#F6E5E7]/95 backdrop-blur-md shadow-sm border-b border-[#EFC0BC]/40"
-        : "bg-transparent"
-        }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-[#F6E5E7]/95 backdrop-blur-md shadow-sm border-b border-[#EFC0BC]/40"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
         {/* Logo */}
@@ -64,14 +104,14 @@ export function Navbar() {
           <img src={logoImg} alt="Dolcha logo" className="h-12 w-auto object-contain rounded-full" />
           <div className="flex flex-col leading-none">
             <span
-              className="text-[#828C6A] tracking-widest uppercase"
-              style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.65rem", letterSpacing: "0.25em" }}
+              className="text-[#828C6A] tracking-widest uppercase font-semibold"
+              style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.75rem", letterSpacing: "0.25em" }}
             >
               Pastelería Boutique
             </span>
             <span
               className="text-[#3a2e2e]"
-              style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.45rem", fontWeight: 600, lineHeight: 1.1 }}
+              style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.55rem", fontWeight: 700, lineHeight: 1.1 }}
             >
               Dolcha
             </span>
@@ -80,30 +120,35 @@ export function Navbar() {
 
         {/* Desktop links */}
         <div ref={linksRef} className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-8">
-          {navLinks.map((link) => (
-            <button
-              key={link.label}
-              onClick={() => scrollTo(link.href)}
-              className="relative text-[#3a2e2e] transition-colors duration-300 hover:text-[#828C6A] group"
-              style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.875rem", letterSpacing: "0.05em", background: "none", border: "none" }}
-            >
-              {link.label}
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#E69B97] transition-all duration-300 group-hover:w-full" />
-            </button>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.slice(1);
+            return (
+              <button
+                key={link.label}
+                onClick={() => scrollTo(link.href)}
+                className={`relative transition-colors duration-300 font-semibold group ${isActive ? "text-[#828C6A]" : "text-[#3a2e2e] hover:text-[#828C6A]"
+                  }`}
+                style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.95rem", letterSpacing: "0.05em", background: "none", border: "none" }}
+              >
+                {link.label}
+                <span className={`absolute -bottom-0.5 left-0 h-px bg-[#E69B97] transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`} />
+              </button>
+            );
+          })}
 
           {/* Cursos - special hover: white bg, black text, gold border */}
           <button
-            className="cursos-btn px-5 py-2 rounded-full border transition-all duration-300"
+            className="cursos-btn px-5 py-2 rounded-full border transition-all duration-300 font-semibold"
             style={{
               fontFamily: "'Lato', sans-serif",
-              fontSize: "0.875rem",
+              fontSize: "0.95rem",
               letterSpacing: "0.08em",
-              background: "#828C6A",
+              background: activeSection === "cursos" ? "#E69B97" : "#828C6A",
               color: "#F6E5E7",
-              border: "1.5px solid #828C6A",
+              border: `1.5px solid ${activeSection === "cursos" ? "#E69B97" : "#828C6A"}`,
             }}
-            onClick={() => scrollTo("#cursos")}
+            onClick={() => scrollTo("https://www.escueladolce.com.ar/")}
           >
             Cursos
           </button>
@@ -134,24 +179,28 @@ export function Navbar() {
           }`}
       >
         <div className="px-6 py-6 flex flex-col gap-5">
-          {navLinks.map((link) => (
-            <button
-              key={link.label}
-              onClick={() => scrollTo(link.href)}
-              className="text-left text-[#3a2e2e] hover:text-[#828C6A] transition-colors"
-              style={{ fontFamily: "'Lato', sans-serif", background: "none", border: "none" }}
-            >
-              {link.label}
-            </button>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.slice(1);
+            return (
+              <button
+                key={link.label}
+                onClick={() => scrollTo(link.href)}
+                className={`text-left font-semibold transition-colors ${isActive ? "text-[#828C6A]" : "text-[#3a2e2e] hover:text-[#828C6A]"
+                  }`}
+                style={{ fontFamily: "'Lato', sans-serif", background: "none", border: "none" }}
+              >
+                {link.label}
+              </button>
+            );
+          })}
           <button
-            onClick={() => scrollTo("#cursos")}
-            className="self-start px-5 py-2 rounded-full border"
+            onClick={() => scrollTo("https://x.com/home?lang=es")}
+            className="self-start px-5 py-2 rounded-full border font-semibold"
             style={{
               fontFamily: "'Lato', sans-serif",
-              background: "#828C6A",
+              background: activeSection === "cursos" ? "#E69B97" : "#828C6A",
               color: "#F6E5E7",
-              border: "1.5px solid #828C6A",
+              border: `1.5px solid ${activeSection === "cursos" ? "#E69B97" : "#828C6A"}`,
             }}
           >
             Cursos
