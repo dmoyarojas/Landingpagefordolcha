@@ -192,7 +192,7 @@ export function Navbar() {
             );
           })}
           <button
-            onClick={() => scrollTo("https://x.com/home?lang=es")}
+            onClick={() => scrollTo("https://www.escueladolce.com.ar/")}
             className="self-start px-5 py-2 rounded-full border font-semibold"
             style={{
               fontFamily: "'Lato', sans-serif",
