@@ -173,9 +173,8 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-500 bg-[#F6E5E7]/98 backdrop-blur-md border-t border-[#EFC0BC]/40 ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden overflow-hidden transition-all duration-500 bg-[#F6E5E7]/98 backdrop-blur-md border-t border-[#EFC0BC]/40 ${menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
           }`}
       >
         <div className="px-6 py-6 flex flex-col gap-5">
