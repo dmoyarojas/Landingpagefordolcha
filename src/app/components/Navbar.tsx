@@ -38,11 +38,10 @@ export function Navbar() {
       "inicio",
       "especialidades",
       "catalogo",
-      "sabores",
       "galeria",
       "fechasEspeciales",
-      "nosotras",
-      "contacto",
+      "",
+      "",
       "cursos",
     ];
 
@@ -72,13 +71,13 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Inicio", href: "#inicio" },
-    { label: "Especialidades", href: "#especialidades" },
+
     { label: "Catálogo", href: "#catalogo" },
     { label: "Sabores", href: "#sabores" },
     { label: "Galería", href: "#galeria" },
     { label: "Fechas Especiales", href: "#fechasEspeciales" },
-    { label: "Nosotras", href: "#nosotras" },
-    { label: "Contacto", href: "https://www.escueladolce.com.ar/" },
+    // { label: "Nosotras", href: "#nosotras" },
+    { label: "Contacto", href: "#contacto" },
   ];
 
   const scrollTo = (href: string) => {
@@ -98,7 +97,7 @@ export function Navbar() {
       aria-label="Navegación principal"
       className="fixed top-0 left-0 right-0 z-50 bg-[#F6E5E7]/95 backdrop-blur-md shadow-sm border-b border-[#EFC0BC]/40"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20 relative">
         {/* Logo */}
         <div ref={logoRef} className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo("#inicio")}>
           <img src={logoImg} alt="Dolcha logo" className="h-12 w-auto object-contain rounded-full" />
@@ -119,7 +118,7 @@ export function Navbar() {
         </div>
 
         {/* Desktop links */}
-        <div ref={linksRef} className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-8">
+        <div ref={linksRef} className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-9 ml-auto">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.slice(1);
             return (
