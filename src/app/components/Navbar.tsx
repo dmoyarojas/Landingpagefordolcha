@@ -36,13 +36,11 @@ export function Navbar() {
   useEffect(() => {
     const sections = [
       "inicio",
-      "especialidades",
+      "nosotras",
       "catalogo",
-      "galeria",
+      "sabores",
       "fechasEspeciales",
-      "",
-      "",
-      "cursos",
+      "contacto",
     ];
 
     const observerOptions = {
@@ -71,12 +69,10 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Inicio", href: "#inicio" },
-
+    { label: "Nosotros", href: "#nosotras" },
     { label: "Catálogo", href: "#catalogo" },
     { label: "Sabores", href: "#sabores" },
-    { label: "Galería", href: "#galeria" },
     { label: "Fechas Especiales", href: "#fechasEspeciales" },
-    // { label: "Nosotras", href: "#nosotras" },
     { label: "Contacto", href: "#contacto" },
   ];
 

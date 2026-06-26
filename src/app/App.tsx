@@ -65,7 +65,7 @@ export default function App() {
         {/* <SpecialtiesSection /> */}
         <ProductCatalogSection />
         <FlavorsSection />
-        <GallerySection />
+        {/* <GallerySection /> */}
         <ThemedSection />
         {/* <CoursesSection /> */}
         <ContactSection />

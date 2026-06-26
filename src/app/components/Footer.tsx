@@ -54,7 +54,7 @@ export function Footer() {
               { label: "Inicio", href: "#inicio" },
               { label: "Especialidades", href: "#especialidades" },
               { label: "Galería", href: "#galeria" },
-              { label: "Cursos", href: "https://x.com/home?lang=es" },
+              { label: "Cursos", href: "https://www.escueladolce.com.ar/" },
               { label: "Contacto", href: "#contacto" },
             ].map((link) => (
               <li key={link.label}>

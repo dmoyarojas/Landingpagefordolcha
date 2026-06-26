@@ -92,7 +92,7 @@ export function FlavorsSection() {
       id="sabores"
       ref={sectionRef}
       className="py-28 px-6 lg:px-12 relative overflow-hidden"
-      style={{ background: "#F6E5E7" }}
+      style={{ background: "#ffffff" }}
     >
       {/* Decorative details */}
       <div
@@ -127,119 +127,157 @@ export function FlavorsSection() {
           </p>
         </div>
 
-        {/* Flavors Grid */}
-        <div ref={cardsRef} className="grid md:grid-cols-5 gap-8 items-stretch mb-16">
-          {/* Card 1: Bizcochos (2 cols on desktop) */}
-          <div
-            className="md:col-span-2 rounded-3xl p-8 flex flex-col justify-between"
-            style={{ background: "#fdf0f1", boxShadow: "0 10px 40px rgba(130,140,106,0.06)" }}
-          >
-            <div>
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-[#EFC0BC]/30">
-                <div className="p-2.5 rounded-full bg-[#828C6A]/10 text-[#828C6A]">
-                  <Cake className="w-5 h-5" />
-                </div>
-                <h3
-                  className="text-[#3a2e2e] text-xl font-semibold"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Bizcochos
-                </h3>
-              </div>
-              <ul className="flex flex-col gap-3.5">
-                {bizcochos.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-center gap-3 text-[#7a5e5e] group cursor-default"
-                    style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.95rem" }}
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#E69B97] transition-transform duration-300 group-hover:scale-150" />
-                    <span className="transition-colors duration-300 group-hover:text-[#3a2e2e]">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Card 2: Rellenos (3 cols on desktop to support 2 subcolumns) */}
-          <div
-            className="md:col-span-3 rounded-3xl p-8 flex flex-col justify-between"
-            style={{ background: "#ffffff", boxShadow: "0 10px 40px rgba(130,140,106,0.06)" }}
-          >
-            <div>
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-[#EFC0BC]/30">
-                <div className="p-2.5 rounded-full bg-[#E69B97]/10 text-[#EFC0BC]">
-                  <Sparkles className="w-5 h-5" style={{ color: "#E69B97" }} />
-                </div>
-                <h3
-                  className="text-[#3a2e2e] text-xl font-semibold"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Rellenos
-                </h3>
-              </div>
-              {/* Double column list for fillings to balance container heights */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3.5">
-                {rellenos.map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-3 text-[#7a5e5e] group cursor-default"
-                    style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.95rem" }}
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#828C6A] transition-transform duration-300 group-hover:scale-150" />
-                    <span className="transition-colors duration-300 group-hover:text-[#3a2e2e]">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Buttercream info & Actions */}
-        <div ref={bannerRef} className="flex flex-col items-center gap-8">
-          <div
-            className="w-full max-w-4xl p-6 rounded-2xl text-center border"
-            style={{
-              background: "#828C6A",
-              color: "#F6E5E7",
-              borderColor: "#828C6A",
-              boxShadow: "0 10px 30px rgba(130,140,106,0.15)"
-            }}
-          >
-            <p
-              className="font-light italic text-sm md:text-base leading-relaxed"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+        {/* 2-Column Layout: Image on the Left, Structured Lists and Actions on the Right */}
+        <div ref={cardsRef} className="grid lg:grid-cols-12 gap-12 items-center mb-16">
+          {/* Left Column: The Beautiful Menu Card Image */}
+          <div className="lg:col-span-5 flex flex-col items-center gap-4">
+            <div
+              className="relative group cursor-pointer overflow-hidden rounded-3xl shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.01]"
+              onClick={() => setModalOpen(true)}
+              style={{
+                boxShadow: "0 20px 50px rgba(130,140,106,0.15)",
+                border: "8px solid #ffffff",
+                background: "#ffffff"
+              }}
             >
-              "Nuestros rellenos están elaborados a base de nuestra deliciosa Buttercream Italiana, combinados con una deliciosa ganache de chocolate."
+              <img
+                src={cartaSaboresImg}
+                alt="Carta de Sabores original de Dolcha"
+                className="w-full max-w-[340px] h-auto object-cover rounded-2xl transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="bg-[#828C6A] text-[#F6E5E7] px-5 py-2.5 rounded-full flex items-center gap-2 text-sm font-medium shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <Eye className="w-4 h-4" />
+                  Ver en pantalla completa
+                </span>
+              </div>
+            </div>
+            <p
+              className="text-xs text-[#7a5e5e]/80 italic"
+              style={{ fontFamily: "'Lato', sans-serif" }}
+            >
+              Haz clic para ampliar la carta oficial
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            <button
-              onClick={openWhatsapp}
-              className="px-8 py-3.5 rounded-full text-white font-medium shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
+          {/* Right Column: Guide to order + Banner + Actions */}
+          <div className="lg:col-span-7 flex flex-col gap-6">
+            {/* Guide Container */}
+            <div
+              className="rounded-3xl p-8 flex flex-col gap-6"
+              style={{ background: "#fdf0f1", boxShadow: "0 10px 40px rgba(130,140,106,0.04)" }}
+            >
+              <h3
+                className="text-[#3a2e2e] text-2xl font-semibold mb-2"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                ¿Cómo armar tu Torta Personalizada?
+              </h3>
+              
+              <div className="flex flex-col gap-6">
+                {/* Step 1 */}
+                <div className="flex gap-4 items-start">
+                  <div 
+                    className="flex-shrink-0 w-10 h-10 rounded-full text-white flex items-center justify-center font-bold text-sm"
+                    style={{ background: "#828C6A" }}
+                  >
+                    1
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-[#3a2e2e] font-semibold text-base mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
+                      Elige tus Sabores favoritos
+                    </h4>
+                    <p className="text-[#7a5e5e] text-sm leading-relaxed" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 300 }}>
+                      Explora la Carta de Sabores en la imagen de la izquierda. Elige tu bizcocho base favorito y combínalo con los rellenos que más te gusten.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 2 */}
+                <div className="flex gap-4 items-start">
+                  <div 
+                    className="flex-shrink-0 w-10 h-10 rounded-full text-white flex items-center justify-center font-bold text-sm"
+                    style={{ background: "#E69B97" }}
+                  >
+                    2
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-[#3a2e2e] font-semibold text-base mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
+                      Define el Diseño y Tamaño
+                    </h4>
+                    <p className="text-[#7a5e5e] text-sm leading-relaxed" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 300 }}>
+                      Cuéntanos tu idea: colores, temática, referencias visuales o detalles decorativos. También definiremos la cantidad de porciones según tus invitados.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="flex gap-4 items-start">
+                  <div 
+                    className="flex-shrink-0 w-10 h-10 rounded-full text-white flex items-center justify-center font-bold text-sm"
+                    style={{ background: "#828C6A" }}
+                  >
+                    3
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-[#3a2e2e] font-semibold text-base mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
+                      ¡Haz tu Pedido!
+                    </h4>
+                    <p className="text-[#7a5e5e] text-sm leading-relaxed" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 300 }}>
+                      Haz clic en "Armar Torta Personalizada" para escribirnos directamente a nuestro WhatsApp. Dinos la fecha del evento y lo que has elegido para darte un presupuesto a medida.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap gap-4 mt-2">
+              <button
+                onClick={openWhatsapp}
+                className="flex-1 sm:flex-initial px-8 py-3.5 rounded-full text-white font-medium shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
+                style={{
+                  fontFamily: "'Lato', sans-serif",
+                  fontSize: "0.85rem",
+                  letterSpacing: "0.05em",
+                  background: "#828C6A",
+                  border: "none",
+                }}
+              >
+                Armar Torta Personalizada
+              </button>
+              <button
+                onClick={() => setModalOpen(true)}
+                className="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-[#828C6A] hover:text-[#3a2e2e] bg-[#fdf0f1] hover:bg-[#EFC0BC]/20 border border-[#828C6A]/20 transition-all duration-300 cursor-pointer"
+                style={{
+                  fontFamily: "'Lato', sans-serif",
+                  fontSize: "0.85rem",
+                  letterSpacing: "0.05em"
+                }}
+              >
+                <Eye className="w-4 h-4" />
+                Ver en Pantalla Completa
+              </button>
+            </div>
+
+            {/* Buttercream info Banner */}
+            <div
+              ref={bannerRef}
+              className="w-full p-5 rounded-2xl text-center border"
               style={{
-                fontFamily: "'Lato', sans-serif",
-                fontSize: "0.85rem",
-                letterSpacing: "0.05em",
                 background: "#828C6A",
-                border: "none",
+                color: "#F6E5E7",
+                borderColor: "#828C6A",
+                boxShadow: "0 8px 25px rgba(130,140,106,0.12)"
               }}
             >
-              Armar Torta Personalizada
-            </button>
-            <button
-              onClick={() => setModalOpen(true)}
-              className="flex items-center gap-2 px-6 py-3.5 rounded-full text-[#828C6A] hover:text-[#3a2e2e] bg-[#fdf0f1] hover:bg-[#EFC0BC]/20 border border-[#828C6A]/20 transition-all duration-300 cursor-pointer"
-              style={{
-                fontFamily: "'Lato', sans-serif",
-                fontSize: "0.85rem",
-                letterSpacing: "0.05em"
-              }}
-            >
-              <Eye className="w-4 h-4" />
-              Ver Menú Impreso
-            </button>
+              <p
+                className="font-light italic text-xs sm:text-sm leading-relaxed"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                "Nuestros rellenos están elaborados a base de nuestra deliciosa Buttercream Italiana, combinados con una deliciosa ganache de chocolate."
+              </p>
+            </div>
           </div>
         </div>
       </div>
