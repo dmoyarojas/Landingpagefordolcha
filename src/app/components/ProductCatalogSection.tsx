@@ -32,6 +32,11 @@ import artesanal4 from "../../public/dolchaTArtesanales3.png"
 import macarrones from "../../public/dolchaMacarrones.jpeg"
 import macarrones2 from "../../public/dolchaMacarrones1.jpeg"
 import macarrones3 from "../../public/dolchaMacarronesSabores.jpeg"
+import celeb1 from "../../public/dolchaVictoriaCarreras.jpeg"
+import celeb2 from "../../public/dolchaPatriciaEtchegoyen.jpeg"
+import celeb3 from "../../public/dolchaTeteCoustarot.jpeg"
+import celeb4 from "../../public/dolchaArgentinadePelicula.jpeg"
+import celeb5 from "../../public/dolchaMirtaLegrand.jpeg"
 
 
 
@@ -46,9 +51,12 @@ interface Product {
   price: string;
   tag?: string;
   msg: string;
+  objectFit?: "cover" | "contain";
+  objectPosition?: string;
 }
 
 const categories = [
+  { id: "celebridades", name: "Celebridades" },
   { id: "eventos", name: "Eventos" },
   { id: "infantiles", name: "Infantiles" },
   { id: "diseno", name: "De Diseño" },
@@ -57,6 +65,59 @@ const categories = [
 ];
 
 const catalogData: Record<string, Product[]> = {
+  celebridades: [
+    {
+      id: "cel-1",
+      title: "Mirtha Legrand",
+      description: "La diva de la televisión argentina disfrutando de nuestras exclusivas creaciones.",
+      img: celeb5,
+      alt: "Mirtha Legrand con Dolcha",
+      price: "",
+      tag: "Celebridades",
+      msg: "Hola Dolcha! Me encantaría cotizar una torta para un evento especial🎂"
+    },
+    {
+      id: "cel-2",
+      title: "Victoria Carreras",
+      description: "Reconocida actriz y directora que nos elige para endulzar sus momentos especiales.",
+      img: celeb1,
+      alt: "Victoria Carreras con Dolcha",
+      price: "",
+      tag: "Celebridades",
+      msg: "Hola Dolcha! Me encantaría cotizar una torta para un evento especial🎂"
+    },
+    {
+      id: "cel-3",
+      title: "Patricia Etchegoyen",
+      description: "Acompañando a la talentosa actriz con nuestros sabores inconfundibles.",
+      img: celeb2,
+      alt: "Patricia Etchegoyen con Dolcha",
+      price: "",
+      tag: "Celebridades",
+      msg: "Hola Dolcha! Me encantaría cotizar una torta para un evento especial🎂"
+    },
+    {
+      id: "cel-4",
+      title: "Teté Coustarot",
+      description: "La elegancia de Teté acompañada por la delicadeza de nuestra pastelería.",
+      img: celeb3,
+      alt: "Teté Coustarot con Dolcha",
+      price: "",
+      tag: "Celebridades",
+      msg: "Hola Dolcha! Me encantaría cotizar una torta para un evento especial🎂"
+    },
+    {
+      id: "cel-5",
+      title: "Argentina de Película",
+      description: "Presentes en los eventos y celebraciones más destacados del espectáculo nacional.",
+      img: celeb4,
+      alt: "Argentina de Película con Dolcha",
+      price: "",
+      tag: "Celebridades",
+      msg: "Hola Dolcha! Me encantaría cotizar una torta para un evento especial🎂",
+      objectFit: "contain"
+    },
+  ],
   eventos: [
     {
       id: "ev-1",
@@ -302,7 +363,7 @@ const catalogData: Record<string, Product[]> = {
 };
 
 export function ProductCatalogSection() {
-  const [activeCategory, setActiveCategory] = useState("eventos");
+  const [activeCategory, setActiveCategory] = useState("celebridades");
   const sectionRef = useRef<HTMLElement>(null);
   const headRef = useRef<HTMLDivElement>(null);
   const tabsRef = useRef<HTMLDivElement>(null);
@@ -395,11 +456,12 @@ export function ProductCatalogSection() {
                   >
                     <div>
                       {/* Image section */}
-                      <div className="relative overflow-hidden aspect-[3/4] w-full">
+                      <div className={`relative overflow-hidden aspect-[3/4] w-full ${product.objectFit === "contain" ? "bg-[#fdf0f1]" : ""}`}>
                         <img
                           src={product.img}
                           alt={product.alt}
-                          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                          className={`w-full h-full transition-transform duration-700 hover:scale-105 ${product.objectFit === "contain" ? "object-contain py-4" : "object-cover"}`}
+                          style={product.objectPosition ? { objectPosition: product.objectPosition } : undefined}
                         />
                         {product.tag && (
                           <div
