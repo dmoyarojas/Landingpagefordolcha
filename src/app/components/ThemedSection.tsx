@@ -161,16 +161,18 @@ export function ThemedSection() {
               <div>
                 <div className="relative overflow-hidden aspect-[3/4] w-full">
                   {(item as any).images ? (
-                    <ImageSlider images={(item as any).images} alt={item.alt} />
+                    <div className="absolute inset-0 z-0">
+                      <ImageSlider images={(item as any).images} alt={item.alt} />
+                    </div>
                   ) : (
                     <img
                       src={item.img}
                       alt={item.alt}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0"
                     />
                   )}
                   <div
-                    className="absolute top-4 left-4 px-3 py-1 rounded-full"
+                    className="absolute top-4 left-4 px-3 py-1 rounded-full z-20"
                     style={{ background: "rgba(130, 140, 106, 0.9)", backdropFilter: "blur(6px)" }}
                   >
                     <span
