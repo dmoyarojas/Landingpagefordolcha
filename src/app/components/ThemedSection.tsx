@@ -1,40 +1,78 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import worldCupCake from "../../public/world_cup_cake.png";
+import boxMundialero from "../../public/dolchaMundial1.jpeg";
 import worldCupMacarons from "../../public/world_cup_macarons.png";
 import worldCupCupcakes from "../../public/world_cup_cupcakes.png";
+import cookieMundial1 from "../../public/dolchaMundial3.jpeg";
+import cookieMundial2 from "../../public/dolchaMundial2.jpeg";
+import cupcakeMundial1 from "../../public/dolchaMundial6.jpeg";
+import cupcakeMundial2 from "../../public/dolchaMundial5.jpeg";
+import cupcakeMundial3 from "../../public/dolchaMundial4.jpeg";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const ImageSlider = ({ images, alt }: { images: string[]; alt: string }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <>
+      {images.map((img, idx) => (
+        <img
+          key={idx}
+          src={img}
+          alt={`${alt} ${idx + 1}`}
+          style={{ transition: "opacity 1s ease-in-out, transform 0.7s ease" }}
+          className={`absolute top-0 left-0 w-full h-full object-cover group-hover:scale-105 ${
+            idx === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
+        />
+      ))}
+    </>
+  );
+};
+
 const themedProducts = [
   {
-    id: "torta-estadio",
-    title: "Torta Estadio Campeones",
-    description: "Nuestra obra de arte mundialista. Bizcochuelo de vainilla humedecido en tres leches, relleno de dulce de leche artesanal y decorado con detalles en oro comestible y un diseño elegante de cancha de fútbol.",
-    img: worldCupCake,
-    alt: "Torta gourmet del mundial de fútbol con césped de azúcar y detalles dorados",
+    id: "box-mundialero",
+    title: "Box Mundialero",
+    description: "Disponible sólo los fines de semana previa reservación.\n• Media docena de sándwich de pollo en pancitos Chips artesanales.\n• Media docena de scons de queso y cibulet.",
+    img: boxMundialero,
+    alt: "Box mundialero con sandwiches y scons",
     tag: "Edición Limitada",
-    msg: "Hola Dolcha! Quisiera consultar sobre la Torta Estadio Campeones de la Colección Mundial 2026 ⚽🏆"
+    price: "$35.000",
+    msg: "Hola Dolcha! Quisiera encargar un Box Mundialero ⚽🏆"
   },
   {
-    id: "macarons-seleccion",
-    title: "Macarons de la Selección",
-    description: "Delicados macarons franceses pintados a mano con sutiles balones dorados y colores mundialistas. Caja por 12 unidades en sabores pistacho y ganache de chocolate blanco.",
-    img: worldCupMacarons,
-    alt: "Macarons en tonos pastel y detalles pintados de balones de fútbol",
-    tag: "Petit Délices",
-    msg: "Hola Dolcha! Quisiera encargar una caja de Macarons de la Selección de la Colección Mundial 2026 ⚽✨"
+    id: "cookies-campeones",
+    title: "Cookies de Campeones",
+    description: "Disfruta de nuestros sabores más argentinos:\n• Mate\n• Copa de fernet\n• Infancia Argentina (butter tofi con chips y dulce de leche)",
+    img: cookieMundial1,
+    images: [cookieMundial1, cookieMundial2],
+    alt: "Cookies de Campeones",
+    tag: "Sabores Únicos",
+    price: "$15.000",
+    msg: "Hola Dolcha! Quisiera encargar las Cookies de Campeones ⚽🍪"
   },
   {
-    id: "cupcakes-pasion",
-    title: "Cupcakes de la Pasión",
-    description: "Cupcakes de chocolate belga rellenos de coulis de frutos rojos, coronados con frosting de crema suiza y decoraciones artesanales de fútbol con detalles dorados.",
-    img: worldCupCupcakes,
-    alt: "Cupcakes con decoraciones mundialistas y detalles dorados",
+    id: "cupcakes-edicion-mundial",
+    title: "Cupcakes Edición Mundial",
+    description: "Deliciosos cupcakes de chocolate rellenos de frutos rojos con decoración artesanal mundialista. ¡Ideales para acompañar los partidos!",
+    img: cupcakeMundial1,
+    images: [cupcakeMundial1, cupcakeMundial2, cupcakeMundial3],
+    alt: "Cupcakes Edición Mundial",
     tag: "Favoritos de la Hinchada",
-    msg: "Hola Dolcha! Me interesan los Cupcakes de la Pasión de la Colección Mundial 2026 ⚽🧁"
+    price: "$25.000 la media docena",
+    msg: "Hola Dolcha! Me interesan los Cupcakes Edición Mundial ⚽🧁"
   }
 ];
 
@@ -122,11 +160,15 @@ export function ThemedSection() {
             >
               <div>
                 <div className="relative overflow-hidden aspect-[3/4] w-full">
-                  <img
-                    src={item.img}
-                    alt={item.alt}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
+                  {(item as any).images ? (
+                    <ImageSlider images={(item as any).images} alt={item.alt} />
+                  ) : (
+                    <img
+                      src={item.img}
+                      alt={item.alt}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  )}
                   <div
                     className="absolute top-4 left-4 px-3 py-1 rounded-full"
                     style={{ background: "rgba(130, 140, 106, 0.9)", backdropFilter: "blur(6px)" }}
@@ -148,11 +190,19 @@ export function ThemedSection() {
                     {item.title}
                   </h3>
                   <p
-                    className="text-[#7a5e5e]"
+                    className="text-[#7a5e5e] whitespace-pre-line"
                     style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.9rem", lineHeight: 1.7, fontWeight: 300 }}
                   >
                     {item.description}
                   </p>
+                  {(item as any).price && (
+                    <p
+                      className="text-[#828C6A] font-bold mt-2"
+                      style={{ fontFamily: "'Lato', sans-serif", fontSize: "1.05rem" }}
+                    >
+                      {(item as any).price}
+                    </p>
+                  )}
                 </div>
               </div>
 
