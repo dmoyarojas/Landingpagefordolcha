@@ -84,7 +84,7 @@ export function FlavorsSection() {
 
   const openWhatsapp = () => {
     const msg = "¡Hola Dolcha! Estuve viendo la Carta de Sabores en la web y me encantaría armar una torta personalizada 🍰✨";
-    window.open(`https://wa.me/541131034341?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/5491131034346?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
   };
 
   return (

@@ -105,7 +105,7 @@ export function ThemedSection() {
   }, []);
 
   const openWhatsapp = (message: string) => {
-    window.open(`https://wa.me/541131034341?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/5491131034346?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
   return (

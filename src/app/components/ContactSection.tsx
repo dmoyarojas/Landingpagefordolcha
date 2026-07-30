@@ -21,7 +21,7 @@ export function ContactSection() {
 
   const openWhatsapp = () => {
     window.open(
-      "https://wa.me/541131034341?text=Hola%20Dolcha%20%F0%9F%8E%82%20Quisiera%20consultar%20sobre%20un%20pedido.",
+      "https://wa.me/5491131034346?text=Hola%20Dolcha%20%F0%9F%8E%82%20Quisiera%20consultar%20sobre%20un%20pedido.",
       "_blank",
       "noopener,noreferrer"
     );
@@ -98,7 +98,12 @@ export function ContactSection() {
               title: "Abrir en Maps"
             },
             { icon: "🕐", text: "Lun – Vie, 10am – 7:30pm, Sáb y Dom 10:30am - 7:00pm" },
-            { icon: "📸", text: "@dolchapasteleriaboutique" },
+            { 
+              icon: "📸", 
+              text: "@dolchapasteleriaboutique",
+              href: "https://www.instagram.com/dolchapasteleriaboutique/",
+              title: "Visitar Instagram"
+            },
           ].map((info) => {
             const pillContent = (
               <>

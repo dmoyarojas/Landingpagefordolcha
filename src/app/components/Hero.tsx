@@ -54,7 +54,7 @@ export function Hero() {
 
   const openWhatsapp = () => {
     window.open(
-      "https://wa.me/541131034341?text=Hola%20Dolcha%2C%20quisiera%20hacer%20un%20pedido%20%F0%9F%8E%82",
+      "https://wa.me/5491131034346?text=Hola%20Dolcha%2C%20quisiera%20hacer%20un%20pedido%20%F0%9F%8E%82",
       "_blank",
       "noopener,noreferrer"
     );
@@ -155,8 +155,7 @@ export function Hero() {
             className="text-[#F6E5E7]/90 max-w-md"
             style={{ fontFamily: "'Lato', sans-serif", fontSize: "1.05rem", lineHeight: 1.75, fontWeight: 300 }}
           >
-            En <strong style={{ fontWeight: 400, color: "#EFC0BC" }}>En Dolcha Pastelería Boutique</strong> elaboramos tortas
-            personalizadas contanos  tu idea y lo hacemos realidad,nos especializamos en tortas,
+            En <strong style={{ fontWeight: 400, color: "#EFC0BC" }}>Dolcha Pastelería Boutique</strong> elaboramos pasteles personalizados, contanos  tu idea y lo hacemos realidad,nos especializamos en
             tartas y mesas dulces para eventos. con ingredientes seleccionados y diseñada para hacer de tu
             celebración un recuerdo inolvidable.
           </p>

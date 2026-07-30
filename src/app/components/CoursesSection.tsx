@@ -52,7 +52,7 @@ export function CoursesSection() {
 
   const openWhatsapp = (courseName: string) => {
     const msg = encodeURIComponent(`Hola Dolcha 🎂 Me interesa el curso de ${courseName}. ¿Tienen disponibilidad?`);
-    window.open(`https://wa.me/541131034341?text=${msg}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/5491131034346?text=${msg}`, "_blank", "noopener,noreferrer");
   };
 
   return (
