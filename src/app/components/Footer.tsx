@@ -71,12 +71,28 @@ export function Footer() {
         </nav>
 
         {/* Copyright */}
-        <p
-          className="text-[#A0AB89] text-center"
-          style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.75rem" }}
-        >
-          © 2026 Dolcha Pastelería Boutique
-        </p>
+        <div className="flex flex-col items-center md:items-end gap-1">
+          <p
+            className="text-[#A0AB89] text-center md:text-right"
+            style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.75rem" }}
+          >
+            © 2026 Dolcha Pastelería Boutique
+          </p>
+          <p
+            className="text-[#A0AB89] text-center md:text-right"
+            style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.7rem" }}
+          >
+            Provided by{" "}
+            <a
+              href="https://dmrportafolio.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#828C6A] transition-colors underline"
+            >
+              David Moya
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
