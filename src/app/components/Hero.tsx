@@ -145,7 +145,7 @@ export function Hero() {
               textShadow: "0 2px 20px rgba(0,0,0,0.3)",
             }}
           >
-            Donde cada torta
+            Donde cada pastel
             <br />
             <em style={{ color: "#EFC0BC", fontStyle: "italic" }}>cuenta una historia.</em>
           </h1>
@@ -155,8 +155,7 @@ export function Hero() {
             className="text-[#F6E5E7]/90 max-w-md"
             style={{ fontFamily: "'Lato', sans-serif", fontSize: "1.05rem", lineHeight: 1.75, fontWeight: 300 }}
           >
-            En <strong style={{ fontWeight: 400, color: "#EFC0BC" }}>Dolcha Pastelería Boutique</strong> elaboramos pasteles personalizados, contanos  tu idea y lo hacemos realidad,nos especializamos en
-            tartas y mesas dulces para eventos. con ingredientes seleccionados y diseñada para hacer de tu
+            En <strong style={{ fontWeight: 400, color: "#EFC0BC" }}>Dolcha Pastelería Boutique</strong> elaboramos pasteles personalizados, contanos  tu idea y lo hacemos realidad,nos especializamos en tartas y mesas dulces para eventos. con ingredientes seleccionados y diseñada para hacer de tu
             celebración un recuerdo inolvidable.
           </p>
 
