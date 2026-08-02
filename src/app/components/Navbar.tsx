@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
-import logoImg from "../../public/dolchaHeroSection.png";
+import logoImg from "../../public/logo-dolcha.png";
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -96,7 +96,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20 relative">
         {/* Logo */}
         <div ref={logoRef} className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo("#inicio")}>
-          <img src={logoImg} alt="Dolcha logo" className="h-12 w-auto object-contain rounded-full" />
+          <img src={logoImg} alt="Dolcha logo" className="h-16 w-auto object-contain transition-transform duration-300 hover:scale-105" />
           <div className="flex flex-col leading-none">
             <span
               className="text-[#828C6A] tracking-widest uppercase font-semibold"
